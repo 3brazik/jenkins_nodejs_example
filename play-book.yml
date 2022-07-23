@@ -5,7 +5,12 @@
   tasks:
     - name: update
       apt :
-      update_cache: yes
+         update_cache: yes
     - name: create
       file:
-        path:
+        path: /home/ubuntu/jenkins_home
+        state: directory
+        mode:  '0777'
+    - name: install opn 
+      apt :
+        name: openjdk-8-jdk    
